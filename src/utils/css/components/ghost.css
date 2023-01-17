@@ -17,6 +17,11 @@
     width: 100%;
 }
 
+.sm-image {
+    max-width: 50%;
+    width: 50%;
+}
+
 .kg-card figcaption {
     padding: 1.5rem;
     font-size: 1.3rem;

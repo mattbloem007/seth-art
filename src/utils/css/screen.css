@@ -65,7 +65,18 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 13vw 0;
+    padding: 7vw 0;
+    max-width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2vw 0;
     max-width: 70%;
     margin: auto;
     text-align: center;
@@ -503,6 +514,25 @@ body {
     }
 }
 
+.blog-card {
+    position: relative;
+    flex: 0 1 30%;
+    display: flex;
+    position: relative;
+    height: 21vw;
+    background: linear-gradient(135deg, #1f1f1f 0%, #111 100%) center center;
+    background-size: cover;
+    overflow: hidden;
+    counter-increment: posts;
+}
+
+@media (max-width: 700px) {
+    .blog-card {
+        flex: 0 1 50%;
+        height: 70vw;
+    }
+}
+
 /* Post Content
 /* ---------------------------------------------------------- */
 
@@ -542,6 +572,17 @@ body {
     margin: 4vw 0;
     position: relative;
     width: 75vw;
+    min-width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    transform: translateX(calc(50vw - 50%));
+}
+
+.post-content-image-blog {
+    margin: 4vw 0;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
     min-width: 100%;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
