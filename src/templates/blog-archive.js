@@ -87,7 +87,7 @@ const BlogIndex = ({ data }, location) => {
 }
 
 const indexQuery = graphql`
-  query blogArchive($skip: Int!, $limit: Int!) {
+  query blogArchive {
     site {
       siteMetadata {
         title
@@ -95,7 +95,7 @@ const indexQuery = graphql`
       }
     }
 
-    allContentfulBlogPost (limit: $limit, skip: $skip) {
+    allContentfulBlogPost  {
       edges {
         node {
           slug
