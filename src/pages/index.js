@@ -62,7 +62,8 @@ const options = {
 
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allContentfulWorks.edges
+  const posts = data.allContentfulArtDetails.edges
+  console.log("POSTS", posts)
   let postCounter = 0
 
   return (
@@ -105,7 +106,7 @@ const indexQuery = graphql`
       }
     }
 
-    allContentfulWorks {
+    allContentfulArtDetails {
       edges {
         node {
           title

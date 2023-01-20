@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import {GatsbyImage} from 'gatsby-plugin-image'
-
+import ImageGalleryComponent from '../components/imageGallery'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -77,15 +77,8 @@ class BlogPostTemplate extends React.Component {
             <p class="post-content-excerpt">{documentToReactComponents(JSON.parse(post.description.raw), options)}</p>
           )*/}
 
-          {post.image && (
-            <div className="post-content-image">
-              {/**<Img
-                className="kg-image"
-                fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
-                alt={post.frontmatter.title}
-              />*/}
-              <GatsbyImage className="kg-image" image={post.image.gatsbyImageData} alt={post.title}/>
-            </div>
+          {post.images && (
+            <ImageGalleryComponent images={post.images} />
           )}
 
           <div className="post-content-body" style={{textAlign: "center"}}>
@@ -120,6 +113,10 @@ export const pageQuery = graphql`
       slug
       image {
         gatsbyImageData(layout: FULL_WIDTH)
+      }
+      images {
+        gatsbyImageData(layout: FULL_WIDTH)
+        title
       }
       description {
         raw
