@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from 'react-responsive-carousel';
 import {GatsbyImage} from 'gatsby-plugin-image'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class ImageGalleryComponent extends React.Component {
     render() {
